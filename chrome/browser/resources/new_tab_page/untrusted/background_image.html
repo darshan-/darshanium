@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      html,
+      body,
+      img {
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        margin: 0
+      }
+
+      img {
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="background_image.js"></script>
+    <img src="$i18nRaw{url}" onload="onImageLoad(this)"></img>
+  </body>
+</html>
