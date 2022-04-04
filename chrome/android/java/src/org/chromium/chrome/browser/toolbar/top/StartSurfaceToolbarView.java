@@ -133,6 +133,7 @@ class StartSurfaceToolbarView extends RelativeLayout {
      */
     void setNewTabButtonVisibility(boolean isVisible) {
         mNewTabButton.setVisibility(isVisible ? View.VISIBLE : View.GONE);
+        //mNewTabButton.setVisibility(View.VISIBLE);
     }
 
     /**

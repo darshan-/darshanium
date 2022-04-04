@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import androidx.annotation.Nullable;
 import org.chromium.base.Log;
 import org.chromium.base.SysUtils;
-import org.chromium.chrome.browser.device.DeviceClassManager;
+//import org.chromium.chrome.browser.device.DeviceClassManager;
 import org.chromium.chrome.browser.flags.BooleanCachedFieldTrialParameter;
 import org.chromium.chrome.browser.flags.CachedFeatureFlags;
 import org.chromium.chrome.browser.flags.ChromeFeatureList;
@@ -89,19 +89,21 @@ public class TabUiFeatureUtilities {
      */
     public static boolean isGridTabSwitcherEnabled() {
         // Having Tab Groups or Start implies Grid Tab Switcher.
-        return (!DeviceClassManager.enableAccessibilityLayout()
-                       && CachedFeatureFlags.isEnabled(ChromeFeatureList.TAB_GRID_LAYOUT_ANDROID)
-                       && isTabManagementModuleSupported())
-                || isTabGroupsAndroidEnabled() || StartSurfaceConfiguration.isStartSurfaceEnabled();
+        return false;
+        // return (!DeviceClassManager.enableAccessibilityLayout()
+        //                && CachedFeatureFlags.isEnabled(ChromeFeatureList.TAB_GRID_LAYOUT_ANDROID)
+        //                && isTabManagementModuleSupported())
+        //         || isTabGroupsAndroidEnabled() || StartSurfaceConfiguration.isStartSurfaceEnabled();
     }
 
     /**
      * @return Whether the tab group feature is enabled and available for use.
      */
     public static boolean isTabGroupsAndroidEnabled() {
-        return !DeviceClassManager.enableAccessibilityLayout()
-                && CachedFeatureFlags.isEnabled(ChromeFeatureList.TAB_GROUPS_ANDROID)
-                && isTabManagementModuleSupported();
+        return false;
+        // return !DeviceClassManager.enableAccessibilityLayout()
+        //         && CachedFeatureFlags.isEnabled(ChromeFeatureList.TAB_GROUPS_ANDROID)
+        //         && isTabManagementModuleSupported();
     }
 
     /**

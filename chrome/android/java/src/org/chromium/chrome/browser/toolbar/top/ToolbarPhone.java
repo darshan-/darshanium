@@ -1246,6 +1246,11 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
 
         float previousAlpha = 0.f;
         if (mHomeButton != null && mHomeButton.getVisibility() != View.GONE) {
+        // if (mHomeButton != null) {
+        //     if (mHomeButton.getVisibility() == View.GONE) {
+        //         mHomeButton.setVisibility(VISIBLE);
+        //         // TODO: if this works, hide it again when task switcher done?
+        //     }
             // Draw the New Tab button used in the URL view.
             previousAlpha = mHomeButton.getAlpha();
             mHomeButton.setAlpha(previousAlpha * floatAlpha);
