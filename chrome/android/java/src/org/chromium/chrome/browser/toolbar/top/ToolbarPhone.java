@@ -365,6 +365,8 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
             mToolbarButtonsContainer = (ViewGroup) findViewById(R.id.toolbar_buttons);
 
             mHomeButton = findViewById(R.id.home_button);
+            updateButtonVisibility();
+            //removeHomeButton();
 
             mUrlBar = (TextView) findViewById(R.id.url_bar);
 
@@ -1644,7 +1646,8 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
 
     @Override
     public void onHomeButtonUpdate(boolean homeButtonEnabled) {
-        mIsHomeButtonEnabled = homeButtonEnabled;
+        //mIsHomeButtonEnabled = homeButtonEnabled;
+        mIsHomeButtonEnabled = false;
         updateButtonVisibility();
     }
 
@@ -1657,15 +1660,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
     @Override
     public void updateButtonVisibility() {
         if (mHomeButton == null) return;
-
-        boolean hideHomeButton = !mIsHomeButtonEnabled
-                || (mIsBottomToolbarVisible
-                        && BottomToolbarVariationManager.isHomeButtonOnBottom());
-        if (hideHomeButton) {
-            removeHomeButton();
-        } else {
-            addHomeButton();
-        }
+        removeHomeButton();
     }
 
     @Override
@@ -2221,7 +2216,8 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
 
     @Override
     public void onTabCountChanged(int numberOfTabs, boolean isIncognito) {
-        if (mHomeButton != null) mHomeButton.setEnabled(true);
+        if (mHomeButton != null)
+            mHomeButton.setEnabled(false);
 
         if (mToggleTabStackButton == null) return;
 
