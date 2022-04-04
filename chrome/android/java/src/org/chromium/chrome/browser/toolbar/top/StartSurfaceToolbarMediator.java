@@ -41,7 +41,7 @@ import org.chromium.chrome.browser.toolbar.ButtonData;
 import org.chromium.chrome.browser.toolbar.IncognitoStateProvider;
 import org.chromium.chrome.browser.ui.appmenu.AppMenuButtonHelper;
 import org.chromium.chrome.browser.user_education.IPHCommandBuilder;
-import org.chromium.chrome.browser.util.AccessibilityUtil;
+//import org.chromium.chrome.browser.util.AccessibilityUtil;
 import org.chromium.components.search_engines.TemplateUrlService.TemplateUrlServiceObserver;
 import org.chromium.ui.modelutil.PropertyModel;
 
@@ -66,6 +66,7 @@ class StartSurfaceToolbarMediator {
             Callback<IPHCommandBuilder> showIPHCallback, boolean hideIncognitoSwitchWhenNoTabs,
             boolean showNewTabAndIdentityDiscAtStart) {
         mPropertyModel = model;
+        mPropertyModel.set(NEW_TAB_BUTTON_IS_VISIBLE, true);
         mOverviewModeState = OverviewModeState.NOT_SHOWN;
         mIdentityDiscController = identityDiscController;
         mIdentityDiscController.addObserver(this::identityDiscStateChanged);
@@ -176,6 +177,7 @@ class StartSurfaceToolbarMediator {
                 }
                 @Override
                 public void onOverviewModeStartedShowing(boolean showToolbar) {
+                    mPropertyModel.set(NEW_TAB_BUTTON_AT_START, true);
                     if (mHideIncognitoSwitchWhenNoTabs) {
                         mPropertyModel.set(INCOGNITO_SWITCHER_VISIBLE, hasIncognitoTabs());
                     }
@@ -239,10 +241,11 @@ class StartSurfaceToolbarMediator {
     private void updateNewTabButtonVisibility() {
         // This toolbar is only shown for tab switcher when accessibility is enabled. Note that
         // OverviewListLayout will be shown as the tab switcher instead of the star surface.
-        boolean isShownTabswitcherState = mOverviewModeState == OverviewModeState.SHOWN_TABSWITCHER
-                || mOverviewModeState == OverviewModeState.SHOWN_TABSWITCHER_TASKS_ONLY
-                || mOverviewModeState == OverviewModeState.SHOWN_TABSWITCHER_OMNIBOX_ONLY
-                || AccessibilityUtil.isAccessibilityEnabled();
-        mPropertyModel.set(NEW_TAB_BUTTON_IS_VISIBLE, isShownTabswitcherState);
+        // boolean isShownTabswitcherState = mOverviewModeState == OverviewModeState.SHOWN_TABSWITCHER
+        //         || mOverviewModeState == OverviewModeState.SHOWN_TABSWITCHER_TASKS_ONLY
+        //         || mOverviewModeState == OverviewModeState.SHOWN_TABSWITCHER_OMNIBOX_ONLY
+        //         || AccessibilityUtil.isAccessibilityEnabled();
+        //mPropertyModel.set(NEW_TAB_BUTTON_IS_VISIBLE, isShownTabswitcherState);
+        mPropertyModel.set(NEW_TAB_BUTTON_IS_VISIBLE, true);
     }
 }

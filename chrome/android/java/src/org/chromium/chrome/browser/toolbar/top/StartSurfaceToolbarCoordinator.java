@@ -51,11 +51,11 @@ class StartSurfaceToolbarCoordinator {
         mStub = startSurfaceToolbarStub;
         mPropertyModel =
                 new PropertyModel.Builder(StartSurfaceToolbarProperties.ALL_KEYS)
-                        .with(StartSurfaceToolbarProperties.INCOGNITO_SWITCHER_VISIBLE,
-                                StartSurfaceConfiguration.START_SURFACE_SHOW_STACK_TAB_SWITCHER
-                                                .getValue()
-                                        ? false
-                                        : true)
+            .with(StartSurfaceToolbarProperties.INCOGNITO_SWITCHER_VISIBLE, true)
+                              //StartSurfaceConfiguration.START_SURFACE_SHOW_STACK_TAB_SWITCHER
+                              //                  .getValue()
+                              //          ? false
+                              //          : true)
                         .with(StartSurfaceToolbarProperties.IN_START_SURFACE_MODE, false)
                         .with(StartSurfaceToolbarProperties.MENU_IS_VISIBLE, true)
                         .with(StartSurfaceToolbarProperties.IS_VISIBLE, true)

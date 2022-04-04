@@ -49,7 +49,8 @@ public class TabSwitcherDrawable extends TintedDrawable {
 
     private TabSwitcherDrawable(Context context, boolean useLight, Bitmap bitmap) {
         super(context, bitmap);
-        setTint(ToolbarColors.getThemedToolbarIconTint(context, useLight));
+        //setTint(ToolbarColors.getThemedToolbarIconTint(context, useLight));
+        setColorFilter(0xffffffff, android.graphics.PorterDuff.Mode.SRC_IN);
         mSingleDigitTextSize =
                 context.getResources().getDimension(R.dimen.toolbar_tab_count_text_size_1_digit);
         mDoubleDigitTextSize =
@@ -60,12 +61,14 @@ public class TabSwitcherDrawable extends TintedDrawable {
         mTextPaint.setTextAlign(Align.CENTER);
         mTextPaint.setTypeface(Typeface.create("sans-serif-condensed", Typeface.BOLD));
         mTextPaint.setColor(getColorForState());
+        //mTextPaint.setColor(0xffffffff);
     }
 
     @Override
     protected boolean onStateChange(int[] state) {
         boolean retVal = super.onStateChange(state);
         if (retVal) mTextPaint.setColor(getColorForState());
+        //if (retVal) mTextPaint.setColor(0xffffffff);
         return retVal;
     }
 
@@ -118,12 +121,14 @@ public class TabSwitcherDrawable extends TintedDrawable {
     }
 
     private int getColorForState() {
-        return mTint.getColorForState(getState(), 0);
+        return 0xffffffff;
+        //return mTint.getColorForState(getState(), 0);
     }
 
     @Override
     public void setTint(ColorStateList tint) {
         super.setTint(tint);
         if (mTextPaint != null) mTextPaint.setColor(getColorForState());
+        //if (mTextPaint != null) mTextPaint.setColor(0xffffffff);
     }
 }

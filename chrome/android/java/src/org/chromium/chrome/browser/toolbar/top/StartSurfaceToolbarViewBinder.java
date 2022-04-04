@@ -63,9 +63,13 @@ class StartSurfaceToolbarViewBinder {
         } else if (propertyKey == NEW_TAB_CLICK_HANDLER) {
             view.setOnNewTabClickHandler(model.get(NEW_TAB_CLICK_HANDLER));
         } else if (propertyKey == NEW_TAB_BUTTON_AT_START) {
-            view.setNewTabButtonAtStart(model.get(NEW_TAB_BUTTON_AT_START));
+            //view.setNewTabButtonAtStart(model.get(NEW_TAB_BUTTON_AT_START));
+            view.setNewTabButtonAtStart(true);
         } else if (propertyKey == NEW_TAB_BUTTON_IS_VISIBLE) {
-            view.setNewTabButtonVisibility(model.get(NEW_TAB_BUTTON_IS_VISIBLE));
+            //view.setNewTabButtonVisibility(model.get(NEW_TAB_BUTTON_IS_VISIBLE));
+            view.setNewTabButtonVisibility(true);
         }
+        view.setNewTabButtonAtStart(true);
+        view.setNewTabButtonVisibility(true);
     }
 }

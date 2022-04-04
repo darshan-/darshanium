@@ -77,6 +77,7 @@ public class ToggleTabStackButton
      * @param useLightDrawables Whether light drawables should be used.
      */
     void setUseLightDrawables(boolean useLightDrawables) {
+        useLightDrawables = true;
         setImageDrawable(
                 useLightDrawables ? mTabSwitcherButtonDrawableLight : mTabSwitcherButtonDrawable);
     }

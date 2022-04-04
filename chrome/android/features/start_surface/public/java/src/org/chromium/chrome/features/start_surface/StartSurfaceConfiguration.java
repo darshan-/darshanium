@@ -31,7 +31,7 @@ public class StartSurfaceConfiguration {
                     ChromeFeatureList.START_SURFACE_ANDROID, "show_last_active_tab_only", false);
     public static final BooleanCachedFieldTrialParameter START_SURFACE_SHOW_STACK_TAB_SWITCHER =
             new BooleanCachedFieldTrialParameter(
-                    ChromeFeatureList.START_SURFACE_ANDROID, "show_stack_tab_switcher", false);
+                    ChromeFeatureList.START_SURFACE_ANDROID, "show_stack_tab_switcher", true);
 
     /**
      * @return Whether the Start Surface is enabled.

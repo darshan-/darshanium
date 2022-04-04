@@ -1297,7 +1297,7 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
 
         // Draw the tab stack button and associated text if necessary.
         if (mTabSwitcherAnimationTabStackDrawable != null && mToggleTabStackButton != null
-                && mUrlExpansionPercent != 1f && !isTabSwitcherOnBottom()) {
+            /*&& mUrlExpansionPercent != 1f*/ && !isTabSwitcherOnBottom()) {
             // Draw the tab stack button image.
             canvas.save();
             translateCanvasToView(mToolbarButtonsContainer, mToggleTabStackButton, canvas);
@@ -1318,7 +1318,8 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
 
             mTabSwitcherAnimationTabStackDrawable.setBounds(
                     mToggleTabStackButton.getDrawable().getBounds());
-            mTabSwitcherAnimationTabStackDrawable.setAlpha(rgbAlpha);
+            //mTabSwitcherAnimationTabStackDrawable.setAlpha(rgbAlpha);
+            mTabSwitcherAnimationTabStackDrawable.setAlpha(0);
             mTabSwitcherAnimationTabStackDrawable.draw(canvas);
             canvas.restore();
         }
@@ -1913,8 +1914,9 @@ public class ToolbarPhone extends ToolbarLayout implements Invalidator.Client, O
         mIsHomeButtonEnabled = !inTabSwitcherMode;
 
         if (mToggleTabStackButton != null) {
-            boolean isGone = inTabSwitcherMode || isTabSwitcherOnBottom();
-            mToggleTabStackButton.setVisibility(isGone ? GONE : VISIBLE);
+            //boolean isGone = inTabSwitcherMode || isTabSwitcherOnBottom();
+            //mToggleTabStackButton.setVisibility(isGone ? GONE : VISIBLE);
+            mToggleTabStackButton.setVisibility(VISIBLE);
         }
 
         if (getMenuButton() != null) {
