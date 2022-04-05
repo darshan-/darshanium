@@ -23,12 +23,12 @@
     // When adding new engines, increment this number and use it as the new
     // max ID. This is used by UMA stats and must be updated to include the full
     // range or else not all engines will be counted in stats.
-    "kMaxPrepopulatedEngineID": 101,
+    "kMaxPrepopulatedEngineID": 102,
 
     // Increment this if you change the data in ways that mean users with
     // existing data should get a new version. Otherwise, existing data may
     // continue to be used and updates made here will not always appear.
-    "kCurrentDataVersion": 121
+    "kCurrentDataVersion": 122
   },
 
   // The following engines are included in country lists and are added to the
@@ -70,6 +70,15 @@
       "image_url_post_params": "imageBin={google:imageThumbnailBase64}",
       "type": "SEARCH_ENGINE_BING",
       "id": 3
+    },
+
+    "brave": {
+      "name": "Brave",
+      "keyword": "search.brave.com",
+      "favicon_url": "https://cdn.search.brave.com/serp/v1/static/brand/8eabe183f0d1f2cb3e2916b7b20c310efd196d740c8cecd341732fcd396fb665-apple-touch-icon.png",
+      "search_url": "https://search.brave.com/search?q={searchTerms}",
+      "type": "SEARCH_ENGINE_BRAVE",
+      "id": 102
     },
 
     "coccoc": {

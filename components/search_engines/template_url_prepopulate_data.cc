@@ -941,6 +941,7 @@ const PrepopulatedEngine* const engines_UA[] = {
 
 // United States
 const PrepopulatedEngine* const engines_US[] = {
+    &brave,
     &google,
     &bing,
     &yahoo,
