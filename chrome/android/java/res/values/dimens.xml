@@ -217,7 +217,7 @@
     <!-- Toolbar dimensions -->
     <dimen name="toolbar_tab_count_text_size_1_digit">12dp</dimen>
     <dimen name="toolbar_tab_count_text_size_2_digit">10dp</dimen>
-    <dimen name="toolbar_tab_count_text_size_3_digit">8dp</dimen>
+    <dimen name="toolbar_tab_count_text_size_3_digit">7.2dp</dimen>
     <dimen name="toolbar_height_no_shadow">56dp</dimen>
     <dimen name="toolbar_shadow_height">8dp</dimen>
     <dimen name="toolbar_progress_bar_height">2dp</dimen>
